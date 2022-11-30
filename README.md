@@ -85,6 +85,10 @@ The Terraform will provision the following:
 4. Spin up the auto scaling group. Attach it to Kubernetes
 5. Spin up two pods on deployment using nginX container and service of type load balancer to expose nginX
 
+
+<img width="308" alt="output1" src="https://user-images.githubusercontent.com/44448083/204739900-789a931f-6387-4679-b765-46104ad639cf.PNG">
+
+
 ```
 
 # Clean up 
