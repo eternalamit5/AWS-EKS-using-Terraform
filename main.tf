@@ -102,7 +102,7 @@ module "eks" {
 }
 
 
-
+#Allows us to authenticate with the kubernetes cluster created
 provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
@@ -110,6 +110,10 @@ provider "kubernetes" {
   load_config_file       = false
   version                = "~> 1.11"
 }
+
+
+#Define deloyment 
+# It is basically the terraform version of the kubernetes YAML
 
 resource "kubernetes_deployment" "example" {
   metadata {
@@ -155,6 +159,8 @@ resource "kubernetes_deployment" "example" {
     }
   }
 }
+
+# To expose the deloyment, we are using kubernetes server
 
 resource "kubernetes_service" "example" {
   metadata {

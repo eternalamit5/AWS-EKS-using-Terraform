@@ -70,6 +70,21 @@ kubectl get pods
 kubectl get svc
 
 
+
+
+```
+
+# Output
+
+```
+The Terraform will provision the following:
+
+1. Security Groups
+2. VPC
+3. EKS Cluster and attach it to VPC
+4. Spin up the auto scaling group. Attach it to Kubernetes
+5. Spin up two pods on deployment using nginX container and service of type load balancer to expose nginX
+
 ```
 
 # Clean up 
